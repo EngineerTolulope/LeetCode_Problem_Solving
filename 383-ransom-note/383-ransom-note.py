@@ -1,5 +1,7 @@
 class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        if not ransomNote:
+            return True
         ransomSet, magazineSet = {}, {}
         
         for char in ransomNote:
