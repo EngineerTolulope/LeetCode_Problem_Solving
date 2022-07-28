@@ -6,7 +6,6 @@ class Solution:
             return False
         
         ransomSet, magazineSet = {}, {}
-        
         for char in ransomNote:
             if not char in magazine:
                 return False
