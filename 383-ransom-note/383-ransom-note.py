@@ -2,6 +2,9 @@ class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
         if not ransomNote:
             return True
+        if len(magazine) < len(ransomNote):
+            return False
+        
         ransomSet, magazineSet = {}, {}
         
         for char in ransomNote:
