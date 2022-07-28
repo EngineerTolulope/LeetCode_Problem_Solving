@@ -3,6 +3,8 @@ class Solution:
         ransomSet, magazineSet = {}, {}
         
         for char in ransomNote:
+            if not char in magazine:
+                return False
             ransomSet[char] = 1 + ransomSet.get(char, 0)
             
         for char in magazine:
