@@ -10,7 +10,7 @@ class Solution:
                 return
             
             current_combo.append(candidates[i])
-            depth_first_search(i, current_combo, total + current_combo[-1])
+            depth_first_search(i, current_combo, total + candidates[i])
             current_combo.pop()
             depth_first_search(i + 1, current_combo, total)
         
