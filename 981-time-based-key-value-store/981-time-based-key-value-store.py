@@ -10,6 +10,7 @@ class TimeMap:
     def get(self, key: str, timestamp: int) -> str:
         if not key in self.storage:
             return ''
+        
         result = ''
         values = self.storage[key]
         left, right = 0, len(values) - 1
