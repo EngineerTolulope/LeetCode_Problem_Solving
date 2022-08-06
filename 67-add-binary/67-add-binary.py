@@ -9,6 +9,5 @@ class Solution:
             total = num_a + num_b + carry
             result = str(total % 2) + result
             carry = total // 2
-        
         return "1" + result if carry == 1 else result
             
