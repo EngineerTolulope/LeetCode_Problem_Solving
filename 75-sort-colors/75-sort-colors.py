@@ -3,5 +3,21 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        nums.sort()
+        def swap(i, j):
+            temp = nums[i]
+            nums[i] = nums[j]
+            nums[j] = temp
+        
+        left, right, i = 0, len(nums) - 1, 0             
+        while i <= right:
+            if nums[i] == 0:
+                swap(left, i)
+                left += 1
+            elif nums[i] == 2:
+                swap(right, i)
+                right -= 1
+                i -= 1  # we don't shift our i pointer after a right swap
+            i += 1
+        
+                
         
