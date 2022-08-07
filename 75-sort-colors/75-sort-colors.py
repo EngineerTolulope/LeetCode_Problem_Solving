@@ -14,7 +14,7 @@ class Solution:
                 swap(left, i)
                 left += 1
             elif nums[i] == 2:
-                swap(i, right)
+                swap(right, i)
                 right -= 1
                 i -= 1  # we don't shift our i pointer after a right swap
             i += 1
