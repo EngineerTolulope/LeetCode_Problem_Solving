@@ -21,7 +21,7 @@ class Solution:
         # check number 0 - 9
         checker = set('0123456789')
         while i < len(s) and s[i] in checker:
-            result = result * 10 + int(s[i])
+            result = result * 10 + (ord(s[i]) - ord('0'))
             i += 1
         
         result = result if positive else result * -1
