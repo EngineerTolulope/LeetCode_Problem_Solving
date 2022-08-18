@@ -23,7 +23,7 @@ class Solution:
             left += 1
             right += 1
             
-            if right < s_length:
+            if right != s_length:
                 s_count[s[right]] = 1 + s_count.get(s[right], 0)
         
         return result
