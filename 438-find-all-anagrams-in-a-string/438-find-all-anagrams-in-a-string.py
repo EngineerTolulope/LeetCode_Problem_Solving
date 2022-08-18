@@ -16,10 +16,9 @@ class Solution:
             if s_count == p_count:
                 result.append(left)
             
-            if s[left] in s_count:
-                s_count[s[left]] -= 1
-                if s_count[s[left]] == 0:
-                    s_count.pop(s[left])
+            s_count[s[left]] -= 1
+            if s_count[s[left]] == 0:
+                s_count.pop(s[left])
             
             left += 1
             right += 1
