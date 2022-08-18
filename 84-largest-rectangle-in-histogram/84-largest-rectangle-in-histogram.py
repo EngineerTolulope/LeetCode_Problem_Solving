@@ -12,7 +12,8 @@ class Solution:
                 start_index = index
             stack.append((start_index, current_height))
             
-        for i, height in stack:
+        while stack:
+            i, height = stack.pop()
             area = height * (len(heights) - i)
             max_area = max(max_area, area)
         return max_area
