@@ -20,9 +20,9 @@ class Solution:
                 s_count[s[left]] -= 1
                 if s_count[s[left]] == 0:
                     s_count.pop(s[left])
+            
             left += 1
             right += 1
-            
             if right != s_length:
                 s_count[s[right]] = 1 + s_count.get(s[right], 0)
         
