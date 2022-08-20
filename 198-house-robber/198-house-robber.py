@@ -7,6 +7,5 @@ class Solution:
             temp = max(rob1 + num, rob2)    # either rob both num and second previous or just rob previous
             rob1 = rob2
             rob2 = temp
-        
         return rob2
             
