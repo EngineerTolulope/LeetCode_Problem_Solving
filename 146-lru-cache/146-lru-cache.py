@@ -8,7 +8,7 @@ class LRUCache:
         self.capacity = capacity
         self.cache = {} # maps key to node
         
-        # left = least recentky used; right = most recently used
+        # left = least recently used; right = most recently used
         self.left, self.right = Node(0, 0), Node(0, 0)
         self.left.next, self.right.previous = self.right, self.left
         
