@@ -20,7 +20,7 @@ class Solution:
         
         for row in range(ROWS):
             for column in range(COLUMNS):
-                depth_first_search(row, column, -1)
+                depth_first_search(row, column, float('-infinity'))
                 
         return max(maximum_path.values())
         
