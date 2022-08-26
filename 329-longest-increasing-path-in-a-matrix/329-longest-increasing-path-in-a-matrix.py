@@ -10,8 +10,7 @@ class Solution:
             if (row, column) in maximum_path:
                 return maximum_path[(row, column)]
             
-            result = 1
-            result = max(result, 1 + depth_first_search(row - 1, column, matrix[row][column]),
+            result = max(1, 1 + depth_first_search(row - 1, column, matrix[row][column]),
                         1 + depth_first_search(row + 1, column, matrix[row][column]),
                         1 + depth_first_search(row, column - 1, matrix[row][column]),
                         1 + depth_first_search(row, column + 1, matrix[row][column]))
