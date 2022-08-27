@@ -15,6 +15,7 @@ class Solution:
                         matrix[row][0] = 0
                     else:
                         row_zero_index = True
+                        continue
         
         for row in range(1, ROWS):
             for column in range(1, COLUMNS):
