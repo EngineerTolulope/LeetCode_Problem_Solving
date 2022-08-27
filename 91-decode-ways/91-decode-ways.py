@@ -13,5 +13,4 @@ class Solution:
                 result += depth_first_search(i + 2)
             num_of_ways[i] = result
             return result
-        
         return depth_first_search(0)
