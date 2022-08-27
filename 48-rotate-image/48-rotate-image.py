@@ -14,8 +14,6 @@ class Solution:
                 matrix[bottom - i][left] = matrix[bottom][right - i]    # replace bottom left
                 matrix[bottom][right - i] = matrix[top + i][right]  # replace bottom right
                 matrix[top + i][right] = top_left_value # replace top right        
-            
             left += 1
             right -= 1
-        
         return matrix
