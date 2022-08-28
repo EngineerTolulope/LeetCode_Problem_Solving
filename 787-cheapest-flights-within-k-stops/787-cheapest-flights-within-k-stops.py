@@ -8,8 +8,6 @@ class Solution:
             temp_prices = prices.copy()
             
             for source, destination, price in flights:
-                # if prices[source] == infinity:
-                #     continue
                 if prices[source] + price < temp_prices[destination]:
                     temp_prices[destination] = prices[source] + price              
             prices = temp_prices
