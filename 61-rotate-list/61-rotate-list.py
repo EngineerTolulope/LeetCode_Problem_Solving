@@ -13,11 +13,12 @@ class Solution:
             length += 1
             tail = tail.next
 
-        # find pivot
-        k, current = k % length, head
+        k = k % length
         if k == 0:
             return head
         
+        # move to the pivot and rotate
+        current = head
         for _ in range(length - k - 1):
             current = current.next
         new_head = current.next 
