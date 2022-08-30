@@ -12,7 +12,6 @@ class Solution:
                     result = max(result, (i - stack[-1]))
         return result
         
-
         
 #         if not s or len(s) == 1:
 #             return 0
