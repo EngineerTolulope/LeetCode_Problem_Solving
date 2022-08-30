@@ -25,11 +25,13 @@ class Solution:
                 
                 # next we add all unvisited stops in connected routes to queue
                 for connected_route in stop_to_bus_routes[current_stop]:
-                    if connected_route not in visited_routes:
-                        for connected_stop in routes[connected_route]:
-                            if connected_stop not in visited_stops:
-                                queue.append((connected_stop, 1 + buses_taken))
-                        visited_routes.add(connected_route)
+                    if connected_route in visited_routes:
+                        continue
+                    for connected_stop in routes[connected_route]:
+                        if connected_stop in visited_stops:
+                            continue
+                        queue.append((connected_stop, 1 + buses_taken))
+                    visited_routes.add(connected_route)
         return -1
                                 
                             
