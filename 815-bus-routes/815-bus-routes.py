@@ -15,23 +15,24 @@ class Solution:
         while queue:
             current_stop, buses_taken = queue.popleft()
             
-            if current_stop not in visited_stops:
-                # check if we reached the target
-                if current_stop == target:
-                    return buses_taken
-                
-                # then we updated visited stops
-                visited_stops.add(current_stop)
-                
-                # next we add all unvisited stops in connected routes to queue
-                for connected_route in stop_to_bus_routes[current_stop]:
-                    if connected_route in visited_routes:
+            if current_stop in visited_stops:
+                continue
+            # check if we reached the target
+            if current_stop == target:
+                return buses_taken
+
+            # then we updated visited stops
+            visited_stops.add(current_stop)
+
+            # next we add all unvisited stops in connected routes to queue
+            for connected_route in stop_to_bus_routes[current_stop]:
+                if connected_route in visited_routes:
+                    continue
+                for connected_stop in routes[connected_route]:
+                    if connected_stop in visited_stops:
                         continue
-                    for connected_stop in routes[connected_route]:
-                        if connected_stop in visited_stops:
-                            continue
-                        queue.append((connected_stop, 1 + buses_taken))
-                    visited_routes.add(connected_route)
+                    queue.append((connected_stop, 1 + buses_taken))
+                visited_routes.add(connected_route)
         return -1
                                 
                             
