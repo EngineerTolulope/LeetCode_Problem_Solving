@@ -9,12 +9,13 @@ class Solution:
         if not root:
             return True
         
-        def depth_first_search(left, right):
+        def is_mirror_tree(left, right):
             if left and right:
-                return (left.val == right.val and depth_first_search(left.left, right.right) and
-                        depth_first_search(left.right, right.left))
+                return (left.val == right.val and 
+                        is_mirror_tree(left.left, right.right) and
+                        is_mirror_tree(left.right, right.left))
 
             return left == right
         
         
-        return depth_first_search(root.left, root.right)
+        return is_mirror_tree(root.left, root.right)
