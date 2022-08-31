@@ -22,5 +22,7 @@ class Solution:
                         left += 1
                 else:
                     right -= 1
+                    while nums[right] == nums[right + 1] and left < right:
+                        right -= 1
         return result
         
