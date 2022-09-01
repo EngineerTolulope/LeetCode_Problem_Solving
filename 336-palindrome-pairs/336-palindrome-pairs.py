@@ -34,7 +34,6 @@ class Solution:
                 reversed_suffix = word_suffix[::-1]
                 if reversed_suffix in word_index:
                     result.append([word_index[reversed_suffix], i])
-
         return result
                     
             
