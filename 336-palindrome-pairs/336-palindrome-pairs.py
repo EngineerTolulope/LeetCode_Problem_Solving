@@ -16,7 +16,6 @@ class Solution:
         
         
         word_index = {word:i for i, word in enumerate(words)}
-        visited = set()
         result = []
         
         for i, word in enumerate(words):
