@@ -7,7 +7,7 @@ class Solution:
         for pos, spd in position_speed:
             time = (target - pos) / spd
             stack.append(time)
-            while len(stack) >= 2 and stack[-1] <= stack[-2]:
+            if len(stack) >= 2 and stack[-1] <= stack[-2]:
                 stack.pop()
                 
         return len(stack)
