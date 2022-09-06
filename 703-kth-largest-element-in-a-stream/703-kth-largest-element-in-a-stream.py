@@ -10,7 +10,7 @@ class KthLargest:
         heapq.heappush(self.nums, val)
         while len(self.nums) > self.k:
             heapq.heappop(self.nums)
-        return self.nums[-self.k]
+        return self.nums[0]
         
 
 
