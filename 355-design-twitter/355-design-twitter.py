@@ -18,7 +18,7 @@ class Twitter:
             if followee_id in self.user_tweets:
                 end_index = len(self.user_tweets[followee_id]) - 1
                 time, tweet_id = self.user_tweets[followee_id][end_index]
-                min_heap.append([time, tweet_id, followee_id, end_index - 1])
+                min_heap.append((time, tweet_id, followee_id, end_index - 1))
         
         heapq.heapify(min_heap)
         while min_heap and len(result) < 10:
@@ -26,7 +26,7 @@ class Twitter:
             result.append(tweet_id)
             if end_index >= 0:
                 time, tweet_id = self.user_tweets[followee_id][end_index]
-                heapq.heappush(min_heap, [time, tweet_id, followee_id, end_index - 1])
+                heapq.heappush(min_heap, (time, tweet_id, followee_id, end_index - 1))
         return result
                 
             
