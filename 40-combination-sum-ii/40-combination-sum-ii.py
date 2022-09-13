@@ -15,6 +15,8 @@ class Solution:
                 current_candidate = candidates[i]
                 if current_candidate == previous:
                     continue
+                elif target - current_candidate < 0:
+                    break
                 
                 current_combo.append(current_candidate)
                 backtracking(current_combo, i + 1, target - current_candidate)
