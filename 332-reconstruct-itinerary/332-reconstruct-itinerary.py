@@ -15,12 +15,14 @@ class Solution:
             
             temp = adjacents[source].copy()
             for i, next_location in enumerate(temp):
-                adjacents[source].pop(i)
+                if next_location == -1: continue
+                
+                adjacents[source][i] = -1
                 result.append(next_location)
                 if backtracking(next_location):
                     return True
                 
-                adjacents[source].insert(i, next_location)
+                adjacents[source][i] = next_location
                 result.pop()
             return False
         
