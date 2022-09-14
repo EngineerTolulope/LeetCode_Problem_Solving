@@ -12,10 +12,10 @@ class Solution:
                 return True
             if source not in adjacents:
                 return False
-            
-            temp = adjacents[source].copy()
-            for i, next_location in enumerate(temp):
-                if next_location == -1: continue
+
+            for i, next_location in enumerate(adjacents[source].copy()):
+                if next_location == -1: 
+                    continue
                 
                 adjacents[source][i] = -1
                 result.append(next_location)
