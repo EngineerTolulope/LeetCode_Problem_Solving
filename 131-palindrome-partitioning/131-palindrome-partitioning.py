@@ -11,6 +11,7 @@ class Solution:
                 right -= 1
             return True
         
+        
         def backtracking(i, partition):
             if i >= len(s):
                 result.append(partition.copy())
