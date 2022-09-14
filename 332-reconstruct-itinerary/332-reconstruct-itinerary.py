@@ -12,8 +12,9 @@ class Solution:
                 return True
             if source not in adjacents:
                 return False
-
-            for i, next_location in enumerate(adjacents[source].copy()):
+            
+            temp = adjacents[source].copy()
+            for i, next_location in enumerate(temp):
                 if next_location == -1: 
                     continue
                 
