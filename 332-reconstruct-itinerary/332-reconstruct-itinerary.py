@@ -15,10 +15,10 @@ class Solution:
             
             temp = adjacents[source].copy()
             for i, next_location in enumerate(temp):
-                if next_location == -1: 
+                if next_location == '*': 
                     continue
                 
-                adjacents[source][i] = -1
+                adjacents[source][i] = '*'
                 result.append(next_location)
                 if backtracking(next_location):
                     return True
