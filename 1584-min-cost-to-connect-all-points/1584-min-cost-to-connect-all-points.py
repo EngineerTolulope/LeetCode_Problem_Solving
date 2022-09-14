@@ -24,9 +24,8 @@ class Solution:
             total_cost += cost
             visited.add(i)
             for neigbour_cost, neighbor in adjacents[i]:
-                if neighbor in visited:
-                    continue
-                heapq.heappush(min_heap, [neigbour_cost, neighbor])
+                if neighbor not in visited:
+                    heapq.heappush(min_heap, [neigbour_cost, neighbor])
         
         return total_cost
                     
