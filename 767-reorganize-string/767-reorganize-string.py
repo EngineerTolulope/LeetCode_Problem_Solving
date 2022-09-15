@@ -6,7 +6,6 @@ class Solution:
     
         max_heap = [(-count, char) for char, count in char_count.items()]
         heapq.heapify(max_heap)
-        del char_count
         
         result = ''
         previous = None
