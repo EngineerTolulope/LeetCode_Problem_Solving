@@ -7,6 +7,7 @@ class Solution:
                       self.house_robber_1(nums[:-1]))
         return max_rob
         
+        
     def house_robber_1(self, nums):
         rob_1, rob_2 = 0, 0
         
