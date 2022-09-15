@@ -16,12 +16,12 @@ class Solution:
         
         
         ROWS, COLUMNS = len(board), len(board[0])
-        STATES_MAP = {
-            0 : (0, 0),  # state: (old, new)
-            1 : (1, 0),
-            2 : (0, 1),
-            3 : (1, 1),
-        }
+        # STATES_MAP = {
+        #     0 : (0, 0),  # state: (old, new)
+        #     1 : (1, 0),
+        #     2 : (0, 1),
+        #     3 : (1, 1),
+        # }
         
         for row in range(ROWS):
             for column in range(COLUMNS):
@@ -34,6 +34,7 @@ class Solution:
         
         for row in range(ROWS):
             for column in range(COLUMNS):
-                state = board[row][column]
-                new_value = STATES_MAP[state][1]
-                board[row][column] = new_value
+                if board[row][column] == 1:
+                    board[row][column] = 0
+                elif board[row][column] in (2, 3):
+                    board[row][column] = 1
