@@ -10,6 +10,7 @@ class Solution:
                 return True
         return False
     
+    
     def get_sum_of_squares(self, num):
         result = 0
         
