@@ -14,8 +14,7 @@ class Solution:
             result = max(result, weight_1)
             
             for next_node, weight_2 in neighbors[node]:
-                if next_node in visited:
-                    continue
-                heapq.heappush(min_heap, (weight_1 + weight_2, next_node))
+                if next_node not in visited:
+                    heapq.heappush(min_heap, (weight_1 + weight_2, next_node))
         return result if len(visited) == n else -1
     
