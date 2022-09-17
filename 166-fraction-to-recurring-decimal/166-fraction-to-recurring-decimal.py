@@ -1,22 +1,20 @@
 class Solution:
     def fractionToDecimal(self, numerator: int, denominator: int) -> str:
-        sign = '-' if numerator*denominator < 0 else ''
-        quotient, remainder = divmod(abs(numerator), abs(denominator))
-#         print(quotient,remainder)
+        sign = '-' if numerator * denominator < 0 else ''
+        numerator, denominator = abs(numerator), abs(denominator)
+        
+        quotient, remainder = divmod(numerator, denominator)
         result = [sign, str(quotient), '.']
         remainders = []
+        
         while remainder not in remainders:
             remainders.append(remainder)
-            quotient, remainder = divmod(remainder*10, abs(denominator))
-#             print(quotient,remainder)
+            quotient, remainder = divmod(remainder * 10, denominator)
             result.append(str(quotient))
-#         print(result)
-#         print(remainders)
-#         print(remainder)
-        i = remainders.index(remainder)
-#         print(i)
-        result.insert(i+3,"(")
-        result.append(")")
-#         print(result)
-        res = ''.join(result).replace('(0)',"").rstrip('.')
-        return res
+        i = remainders.index(remainder) + 3
+        result.insert(i, '(')
+        result.append(')')
+        result = ''.join(result).replace('(0)', '').rstrip('.')
+        return result
+        
+        
