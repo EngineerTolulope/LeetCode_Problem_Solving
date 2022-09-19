@@ -2,7 +2,6 @@ from sortedcontainers import SortedList
 
 class Solution:
     def countSmaller(self, nums: List[int]) -> List[int]:
-        
         nums = nums[::-1]
         sorted_list = SortedList()
         sorted_list.add(nums[0])
@@ -14,6 +13,3 @@ class Solution:
             result.append(small_count)
             sorted_list.add(num)
         return result[::-1]
-        
-        
-            
