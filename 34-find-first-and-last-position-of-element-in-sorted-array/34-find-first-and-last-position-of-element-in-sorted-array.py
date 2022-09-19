@@ -13,7 +13,7 @@ class Solution:
                     i = middle
                     if left_biased:
                         right = middle - 1
-                        if right > 0 and nums[right] != target:
+                        if right >= 0 and nums[right] != target:
                             return i
                     else:
                         left = middle + 1
