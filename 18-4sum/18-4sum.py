@@ -26,7 +26,6 @@ class Solution:
                     left += 1
                     while left < right and nums[left] == nums[left - 1]:
                         left += 1
-            return
         
         
         k_sum(4, 0, target)
