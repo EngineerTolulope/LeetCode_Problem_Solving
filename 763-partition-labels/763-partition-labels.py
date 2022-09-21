@@ -12,8 +12,4 @@ class Solution:
             if end == i:
                 result.append(size)
                 size = 0
-                
-            if end == len(s) - 1 and sum(result) != len(s):
-                result.append(len(s) - sum(result))
-                break
         return result
