@@ -25,7 +25,7 @@ class Solution:
                 if back_depth <= depth:
                     connections.discard(tuple(sorted((node, neighbor))))
                 min_back_depth = min(min_back_depth, back_depth)
-            rank[node] = n
+            # rank[node] = n
             return min_back_depth
         
         
