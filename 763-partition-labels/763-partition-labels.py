@@ -8,10 +8,12 @@ class Solution:
         for i, char in enumerate(s):
             size += 1
             end = max(end, last_index[char])
+            
+            if end == i:
+                result.append(size)
+                size = 0
+                
             if end == len(s) - 1 and sum(result) != len(s):
                 result.append(len(s) - sum(result))
                 break
-            elif end == i:
-                result.append(size)
-                size = 0
         return result
