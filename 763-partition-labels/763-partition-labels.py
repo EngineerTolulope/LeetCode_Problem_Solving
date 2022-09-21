@@ -11,8 +11,7 @@ class Solution:
             if end == len(s) - 1 and sum(result) != len(s):
                 result.append(len(s) - sum(result))
                 break
-            
-            if end == i:
+            elif end == i:
                 result.append(size)
                 size = 0
         return result
