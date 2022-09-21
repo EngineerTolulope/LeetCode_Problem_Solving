@@ -9,7 +9,7 @@ class Solution:
         
         
         graph = make_graph(connections)
-        connections = set(map(tuple, (map(sorted, connections))))
+        connections = set(map(tuple, connections))
         rank = [-2] * n
         
         
@@ -23,7 +23,8 @@ class Solution:
                     continue
                 back_depth = depth_first_search(neighbor, depth + 1)
                 if back_depth <= depth:
-                    connections.discard(tuple(sorted((node, neighbor))))
+                    connections.discard((node,neighbor))
+                    connections.discard((neighbor, node))
                 min_back_depth = min(min_back_depth, back_depth)
             # rank[node] = n
             return min_back_depth
