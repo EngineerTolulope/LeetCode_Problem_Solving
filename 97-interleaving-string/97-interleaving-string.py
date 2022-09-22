@@ -15,6 +15,5 @@ class Solution:
             if j < len(s2) and s2[j] == s3[i + j] and depth_first_search(i, j + 1):
                 return True
             cache[(i, j)] = False
-            return False
-            
+            return False 
         return depth_first_search(0, 0)
