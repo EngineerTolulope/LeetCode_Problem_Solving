@@ -3,10 +3,11 @@ class Solution:
         if n <= 2:
             return 0
         
-        primes = [True] * n
-        primes[0] = primes[1] = False
+        primes = [1] * n
+        primes[0] = primes[1] = 0
         
         for i in range(2, int(n ** 0.5) + 1):
             if primes[i]:
-                primes[i * i:n:i] = [False] * len(primes[i * i:n:i])
+                primes[i * i:n:i] = [0] * len(primes[i * i:n:i])
+                # print(primes)
         return sum(primes)
