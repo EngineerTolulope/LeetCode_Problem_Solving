@@ -7,7 +7,6 @@ class Solution:
                     depth_first_search(end)
             
         
-        
         visited, province_count = set(), 0
         for start in range(len(isConnected)):
             if start not in visited:
