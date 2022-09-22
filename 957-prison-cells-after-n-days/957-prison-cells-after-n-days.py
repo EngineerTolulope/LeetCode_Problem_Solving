@@ -9,7 +9,7 @@ class Solution:
         
         found_states = {}
         for i in range(n):
-            cells_string = str(cells)
+            cells_string = tuple(cells)
             if cells_string in found_states:
                 length_loop = i - found_states[cells_string]
                 return self.prisonAfterNDays(cells, (n - i) % length_loop)
