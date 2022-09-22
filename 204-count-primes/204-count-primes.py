@@ -4,11 +4,10 @@ class Solution:
             return 0
         
         prime_count = 2
-        primes = [1] * n
-        primes[0] = primes[1] = 0
+        primes = [True] * n
+        primes[0] = primes[1] = False
         
         for i in range(2, int(n ** 0.5) + 1):
             if primes[i]:
-                for j in range(i * i, n, i):
-                    primes[j] = 0
+                primes[i * i:n:i] = [False] * len(primes[i * i:n:i])
         return sum(primes)
