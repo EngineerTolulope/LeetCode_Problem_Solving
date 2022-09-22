@@ -17,5 +17,4 @@ class Solution:
             cache[(i, j)] = False
             return False
             
-        
         return depth_first_search(0, 0)
