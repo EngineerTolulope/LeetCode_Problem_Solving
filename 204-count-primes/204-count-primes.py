@@ -3,7 +3,6 @@ class Solution:
         if n <= 2:
             return 0
         
-        prime_count = 2
         primes = [True] * n
         primes[0] = primes[1] = False
         
