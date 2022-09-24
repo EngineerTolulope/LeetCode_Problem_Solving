@@ -1,7 +1,7 @@
 class DetectSquares:
 
     def __init__(self):
-        self.point_count = defaultdict(lambda: 0)
+        self.point_count = defaultdict(int)
 
     def add(self, point: List[int]) -> None:
         self.point_count[tuple(point)] += 1
