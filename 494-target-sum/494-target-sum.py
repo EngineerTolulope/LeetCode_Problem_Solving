@@ -1,6 +1,6 @@
 class Solution:
     def findTargetSumWays(self, nums: List[int], target: int) -> int:
-        cache = {}
+        cache = {}  # (index, total) -> number of ways
         def backtracking(i, total):
             if i == len(nums):
                 return 1 if total == target else 0
