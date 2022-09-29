@@ -16,7 +16,7 @@ class Solution:
                     return False
                 num_count[n] -= 1
                 if num_count[n] == 0:
-                    del num_count[n]
+                    # del num_count[n]
                     # if n != min_heap[0]:
                     #     return False
                     heapq.heappop(min_heap)
