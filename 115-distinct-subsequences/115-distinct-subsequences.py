@@ -17,4 +17,5 @@ class Solution:
             return cache[(i, j)]
         
         
-        return depth_first_search(0, 0)
+        depth_first_search(0, 0)
+        return cache[(0, 0)]
