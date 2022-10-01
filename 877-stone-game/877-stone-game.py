@@ -15,4 +15,4 @@ class Solution:
                                     depth_first_search(left, right - 1) + right_num)
             
             return dp[(left, right)]
-        return depth_first_search(0, len(piles) - 1) #> (sum(piles)) // 2
+        return depth_first_search(0, len(piles) - 1) > (sum(piles)) // 2
