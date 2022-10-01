@@ -9,7 +9,6 @@ class Solution:
             sub_string = s[left:right+1]
             if sub_string in seen:
                 result.add(sub_string)
-            else:
-                seen.add(sub_string)
+            seen.add(sub_string)
             left += 1
         return list(result)
