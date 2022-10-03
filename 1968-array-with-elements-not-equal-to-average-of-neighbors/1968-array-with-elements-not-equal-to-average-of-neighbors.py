@@ -12,16 +12,3 @@ class Solution:
             result[i] = nums[j]
             j += 1
         return result
-        
-#         i, j = 0, 0
-#         while i < len(nums):
-#             result[i] = nums[j]
-#             j += 1
-#             i += 2
-        
-#         i = 1
-#         while i < len(nums):
-#             result[i] = nums[j]
-#             j += 1
-#             i += 2
-#         return result
