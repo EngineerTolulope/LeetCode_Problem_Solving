@@ -1,7 +1,7 @@
 class Solution:
     def rearrangeArray(self, nums: List[int]) -> List[int]:
         nums.sort()
-        result = [0] * len(nums)
+        result = [-1] * len(nums)
 
         j = 0
         for i in range(0, len(nums), 2):
