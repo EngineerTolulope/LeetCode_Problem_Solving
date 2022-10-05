@@ -17,6 +17,5 @@ class Solution:
             node.val += current_sum
             current_sum += temp
             dfs(node.left)
-            return
         dfs(root)
         return root
