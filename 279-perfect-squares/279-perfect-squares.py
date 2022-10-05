@@ -9,5 +9,6 @@ class Solution:
             for square in squares:
                 if target - square < 0:
                     break
-                dp[target] = min(dp[target], 1 + dp[target - square])
+                if 1 + dp[target - square] < dp[target]:
+                    dp[target] = 1 + dp[target - square]
         return dp[n]
