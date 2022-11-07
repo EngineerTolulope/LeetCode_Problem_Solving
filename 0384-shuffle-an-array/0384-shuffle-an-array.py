@@ -7,7 +7,7 @@ class Solution:
         return self.nums
 
     def shuffle(self) -> List[int]:
-        new_nums = self.nums[:]
+        new_nums = self.nums.copy()
         nums_len = len(new_nums)
         for i in range(nums_len):
             j = randint(i, nums_len - 1)
