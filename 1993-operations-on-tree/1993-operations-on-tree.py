@@ -36,9 +36,7 @@ class LockingTree:
         
         if locked_count >= 1:
             self.locked[num] = user
-            return True
-        else:
-            return False
+        return locked_count >= 1
 
 
 # Your LockingTree object will be instantiated and called as such:
