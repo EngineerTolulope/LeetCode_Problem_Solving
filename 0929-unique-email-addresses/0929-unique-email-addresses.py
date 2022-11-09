@@ -6,9 +6,7 @@ class Solution:
             for i, char in enumerate(email):
                 if char == '@' or char == '+':
                     break
-                elif char == '.':
-                    continue
-                else:
+                elif char != '.':
                     local += char
         
             while email[i] != '@':
