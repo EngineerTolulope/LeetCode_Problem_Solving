@@ -7,6 +7,6 @@ class Solution:
                 close -= 1
             elif bracket == ']':
                 close += 1
-            max_close = max(close, max_close)
+                max_close = max(close, max_close)
         return (max_close + 1) // 2
             
