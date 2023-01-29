@@ -9,9 +9,8 @@ class Solution:
         for char, word in zip(pattern, words):
             if word in word_to_char and word_to_char[word] != char:
                 return False
-            elif char in char_to_word and char_to_word[char] != word:
+            if char in char_to_word and char_to_word[char] != word:
                 return False
-            else:
-                char_to_word[char] = word
-                word_to_char[word] = char
+            char_to_word[char] = word
+            word_to_char[word] = char
         return True
