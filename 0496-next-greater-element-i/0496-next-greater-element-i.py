@@ -5,11 +5,11 @@ class Solution:
         result = [-1] * len(nums1)
         
         for num in nums2:
-            while mono_stack and mono_stack[-1] < num:
+            while mono_stack and num > mono_stack[-1]:
                 prev_num = mono_stack.pop()
                 index = nums1_index[prev_num]
                 result[index] = num
             
-            if num in nums1:
+            if num in nums1_index:
                 mono_stack.append(num)
         return result
