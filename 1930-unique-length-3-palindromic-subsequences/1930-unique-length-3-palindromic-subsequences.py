@@ -1,19 +1,17 @@
 class Solution:
     def countPalindromicSubsequence(self, s: str) -> int:
-        res = set()
-        left = set()
-        right = Counter(s)
-
-        for mid in range(len(s)):
-            right[s[mid]]-=1
-            if right[s[mid]] == 0:
-                right.pop(s[mid])
+        result, left_chars, right_chars = set(), set(), {}
+        for char in s:
+            right_chars[char] = 1 + right_chars.get(char, 0)
             
-            for c in left:
-                if c in right:
-                    res.add(c+s[mid]+c)
+        for middle in s:
+            right_chars[middle] -= 1
+            if right_chars[middle] == 0:
+                right_chars.pop(middle)
             
-            left.add(s[mid])
-        
-        return len(res)
-
+            for outer in left_chars:
+                if outer in right_chars:
+                    result.add((middle, outer))
+            
+            left_chars.add(middle)
+        return len(result)
