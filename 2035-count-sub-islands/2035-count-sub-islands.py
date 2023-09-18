@@ -13,11 +13,10 @@ class Solution:
             if grid1[row][column] == 0:
                 result = False
 
-
             result = all({result, depth_first_search(row - 1, column),
-                                  depth_first_search(row + 1, column),
-                                  depth_first_search(row, column - 1),
-                                  depth_first_search(row, column + 1)}) 
+                              depth_first_search(row + 1, column),
+                              depth_first_search(row, column - 1),
+                              depth_first_search(row, column + 1)}) 
             return result
         
         
