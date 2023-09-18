@@ -4,22 +4,27 @@ class Solution:
         visited = set()
 
         def depth_first_search(row, column):
-            if row not in range(ROWS) or column not in range(COLUMNS) or (row, column) in visited or grid2[row][column] == 0:
+            if (row not in range(ROWS) or column not in range(COLUMNS) 
+                or (row, column) in visited or grid2[row][column] == 0):
                 return True
             
             visited.add((row, column))
-            result = grid1[row][column] == 1
-            result &= depth_first_search(row - 1, column)
-            result &= depth_first_search(row + 1, column)
-            result &= depth_first_search(row, column - 1)
-            result &= depth_first_search(row, column + 1)
-            
+            result = True
+            if grid1[row][column] == 0:
+                result = False
+
+            result = all({result, depth_first_search(row - 1, column),
+                              depth_first_search(row + 1, column),
+                              depth_first_search(row, column - 1),
+                              depth_first_search(row, column + 1)}) 
             return result
+        
         
         island_count = 0
         for row in range(ROWS):
             for column in range(COLUMNS):
-                if grid2[row][column] == 1 and (row, column) not in visited and depth_first_search(row, column):
+                if (grid2[row][column] == 1 and (row, column) not in visited 
+                                            and depth_first_search(row, column)):
                     island_count += 1
-        
         return island_count
+
