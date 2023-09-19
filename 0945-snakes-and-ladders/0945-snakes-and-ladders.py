@@ -3,7 +3,7 @@ class Solution:
         board.reverse()
         board_length = len(board)
 
-        def get_position_from_square_number(square):
+        def get_position_from_square_number(square, board_length):
             row = (square - 1) // board_length
             column = (square - 1) % board_length
             if row % 2 != 0:
@@ -11,14 +11,14 @@ class Solution:
             return (row, column)
 
         visited = set()
-        queue = deque([(1, 0)])   # stores (square, number of moves)
-        print(queue)
+        queue = deque([(1, 0)]) # stores (square number, number of moves)
+        
         while queue:
             square, moves_count = queue.popleft()
             for option in range(1, 7):
                 new_square = square + option
                 new_moves_count = moves_count + 1
-                row, column = get_position_from_square_number(new_square)
+                row, column = get_position_from_square_number(new_square, board_length)
                 if board[row][column] != -1:
                     new_square = board[row][column]
                 if new_square == board_length * board_length:
@@ -26,5 +26,6 @@ class Solution:
                 if new_square not in visited:
                     visited.add(new_square)
                     queue.append((new_square, new_moves_count))
+        
         return -1
 
