@@ -1,7 +1,8 @@
 class Solution:
     def checkMove(self, board: List[List[str]], rMove: int, cMove: int, color: str) -> bool:
         ROWS, COLUMNS = len(board), len(board[0])
-        directions = [(0, 1), (1, 0), (1, 1), (-1, -1), (-1, 0), (0, -1), (1, -1), (-1, 1)]
+        directions = [(0, 1), (1, 0), (1, 1), (-1, -1), 
+                    (-1, 0), (0, -1), (1, -1), (-1, 1)]
         board[rMove][cMove] = color
 
         def is_valid_position(row, column):
