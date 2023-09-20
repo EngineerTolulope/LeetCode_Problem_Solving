@@ -20,4 +20,5 @@ class Solution:
                     else:
                         dominoes[index + 1] = "R"
                         queue.append((index + 1, "R"))
+       
         return "".join(dominoes)
