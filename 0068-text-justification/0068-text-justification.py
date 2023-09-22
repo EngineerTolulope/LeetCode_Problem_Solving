@@ -20,21 +20,18 @@ class Solution:
                 spaces_between_words = total_spaces // num_gaps
                 extra_spaces = total_spaces % num_gaps
 
-                justified_line = line[0]
-                for j in range(1, len(line)):
-                    if extra_spaces > 0:
-                        justified_line += " " * (spaces_between_words + 1)
-                        extra_spaces -= 1
-                    else:
-                        justified_line += " " * spaces_between_words
-                    justified_line += line[j]
+                justified_line = []
+                for j in range(len(line) - 1):
+                    justified_line.append(line[j])
+                    justified_line.append(" " * (spaces_between_words + (extra_spaces > 0)))
+                    extra_spaces -= 1
 
-                result.append(justified_line)
+                justified_line.append(line[-1])
+                result.append("".join(justified_line))
             else:
                 result.append(" ".join(line).ljust(maxWidth))
 
-        return result  
-
+        return result
     # Initial 
     def fullJustify_(self, words: List[str], maxWidth: int) -> List[str]:
         result, line, length = [], [], 0
