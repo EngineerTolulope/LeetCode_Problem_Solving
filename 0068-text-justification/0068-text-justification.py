@@ -1,11 +1,11 @@
 class Solution:
-    def fullJustif_(self, words: List[str], maxWidth: int) -> List[str]:
+    def fullJustify(self, words: List[str], maxWidth: int) -> List[str]:
         result = []
         i = 0
 
         while i < len(words):
-            line = []
-            line_length = 0
+            line = []  # Store words for the current line
+            line_length = 0  # Total length of words in the line
 
             # Add words to the line until it reaches maxWidth
             while i < len(words) and line_length + len(line) + len(words[i]) <= maxWidth:
@@ -20,16 +20,17 @@ class Solution:
                 spaces_between_words = total_spaces // num_gaps
                 extra_spaces = total_spaces % num_gaps
 
-                justified_line = []
+                justified_line = []  # Store the justified line
+
                 for j in range(len(line) - 1):
-                    justified_line.append(line[j])
-                    justified_line.append(" " * (spaces_between_words + (extra_spaces > 0)))
+                    justified_line.append(line[j])  # Add word to justified line
+                    justified_line.append(" " * (spaces_between_words + (extra_spaces > 0)))  # Add spaces between words
                     extra_spaces -= 1
 
-                justified_line.append(line[-1])
-                result.append("".join(justified_line))
+                justified_line.append(line[-1])  # Add the last word in the line
+                result.append("".join(justified_line))  # Convert justified line to string and append to result
             else:
-                result.append(" ".join(line).ljust(maxWidth))
+                result.append(" ".join(line).ljust(maxWidth))  # Left-justify the line with single word
 
         return result
     # Initial 
