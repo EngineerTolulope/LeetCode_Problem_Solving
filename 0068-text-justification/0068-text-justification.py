@@ -1,22 +1,27 @@
 class Solution:
-    def fullJustify(self, words, maxWidth):
-        result = []
-        line = []
-        line_length = 0
+    def fullJustify(self, words: List[str], maxWidth: int) -> List[str]:
+        result, line, length = [], [], 0
 
-        for word in words:
-            # If the current line length plus the length of the next word and the necessary spaces is greater than maxWidth, justify the current line
-            if line_length + len(line) + len(word) > maxWidth:
-                for i in range(maxWidth - line_length):
-                    line[i % (len(line) - 1 or 1)] += ' '  # Distribute extra spaces evenly
-                
-                result.append(''.join(line))
-                line = []
-                line_length = 0
+        i = 0
+        while i < len(words):
+            if length + len(line) + len(words[i]) > maxWidth:
+                extra_space = maxWidth - length
+                spaces = extra_space // max(1, len(line) - 1)
+                remainder = extra_space % max(1, len(line) - 1) 
 
-            line.append(word)
-            line_length += len(word)
-
-        result.append(' '.join(line).ljust(maxWidth))  # Left justify the last line
-
+                for j in range(max(1, len(line) - 1)):
+                    line[j] += " " * spaces
+                    if remainder:
+                        line[j] += " "
+                        remainder -= 1
+                result.append("".join(line))
+                line, length = [], 0
+            
+            line.append(words[i])
+            length += len(words[i])
+            i += 1
+        
+        last_line = " ".join(line)
+        trail_space = maxWidth - len(last_line)
+        result.append(last_line + " " * trail_space)
         return result
