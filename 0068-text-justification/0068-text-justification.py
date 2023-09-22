@@ -1,5 +1,5 @@
 class Solution:
-    def fullJustify(self, words: List[str], maxWidth: int) -> List[str]:
+    def fullJustif_(self, words: List[str], maxWidth: int) -> List[str]:
         result = []
         i = 0
 
@@ -33,7 +33,7 @@ class Solution:
 
         return result
     # Initial 
-    def fullJustify_(self, words: List[str], maxWidth: int) -> List[str]:
+    def fullJustify(self, words: List[str], maxWidth: int) -> List[str]:
         result, line, length = [], [], 0
 
         i = 0
