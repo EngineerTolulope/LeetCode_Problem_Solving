@@ -15,6 +15,6 @@ class Solution:
                     if j == s_length - 1:
                         return True
 
-            farthest = end
+            farthest = max(farthest, end)
 
         return False
