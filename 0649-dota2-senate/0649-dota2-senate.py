@@ -1,19 +1,22 @@
 class Solution:
     def predictPartyVictory(self, senate: str) -> str:
-        r_queue, d_queue = deque(), deque()
+        senate_list = list(senate)
+        n = len(senate_list)
+        radiant = []
+        dire = []
 
-        for i, senator in enumerate(senate):
+        for i, senator in enumerate(senate_list):
             if senator == "R":
-                r_queue.append(i)
+                radiant.append(i)
             else:
-                d_queue.append(i)
+                dire.append(i)
 
-        while d_queue and r_queue:
-            d_senator = d_queue.popleft()
-            r_senator = r_queue.popleft()
-            
-            if d_senator < r_senator:
-                d_queue.append(d_senator + len(senate))
+        while radiant and dire:
+            if radiant[0] < dire[0]:
+                radiant.append(radiant[0] + n)
             else:
-                r_queue.append(r_senator + len(senate))
-        return "Radiant" if r_queue else "Dire"
+                dire.append(dire[0] + n)
+            radiant.pop(0)
+            dire.pop(0)
+
+        return "Radiant" if radiant else "Dire"
