@@ -1,25 +1,28 @@
 class Solution:
     def makesquare(self, matchsticks: List[int]) -> bool:
-        square_lengths = {"up": 0, "down": 0, "left": 0, "right": 0}
+        if not matchsticks:
+            return False
+
         total_length = sum(matchsticks)
         side_length = total_length // 4
 
         if total_length % 4 != 0:
             return False
 
+        target_sides = [side_length] * 4
         matchsticks.sort(reverse=True)
 
-        def backtracking(i):
-            if i == len(matchsticks):
+        def dfs(index):
+            if index == len(matchsticks):
                 return True
 
-            for key in square_lengths:
-                if square_lengths[key] + matchsticks[i] <= side_length:
-                    square_lengths[key] += matchsticks[i]
-                    if backtracking(i + 1):
+            for i in range(4):
+                if target_sides[i] >= matchsticks[index]:
+                    target_sides[i] -= matchsticks[index]
+                    if dfs(index + 1):
                         return True
-                    
-                    square_lengths[key] -= matchsticks[i]
+                    target_sides[i] += matchsticks[index]
+
             return False
 
-        return backtracking(0)
+        return dfs(0)
