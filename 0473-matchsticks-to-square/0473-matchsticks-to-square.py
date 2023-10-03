@@ -17,7 +17,7 @@ class Solution:
         # Sort the matchsticks in descending order to optimize backtracking
         matchsticks.sort(reverse=True)
 
-        def dfs(index):
+        def backtracking(index):
             # Base case: all matchsticks have been used
             if index == len(matchsticks):
                 return True
@@ -26,13 +26,13 @@ class Solution:
             for i in range(4):
                 if target_sides[i] >= matchsticks[index]:
                     target_sides[i] -= matchsticks[index]  # Update remaining length
-                    if dfs(index + 1):  # Recursively check the next matchstick
+                    if backtracking(index + 1):  # Recursively check the next matchstick
                         return True
                     target_sides[i] += matchsticks[index]  # Backtrack by restoring the original state
 
             return False
 
-        return dfs(0)
+        return backtracking(0)
 
     # initial
     def makesquare_(self, matchsticks: List[int]) -> bool:
