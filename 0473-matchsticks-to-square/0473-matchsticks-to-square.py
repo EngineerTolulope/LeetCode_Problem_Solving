@@ -1,8 +1,8 @@
 class Solution:
     def makesquare(self, matchsticks: List[int]) -> bool:
-        square_lengths = {"up" : 0, "down" : 0, "left" : 0, "right" : 0}
+        square_lengths = {"up": 0, "down": 0, "left": 0, "right": 0}
         total_length = sum(matchsticks)
-        side_length = total_length / 4
+        side_length = total_length // 4
 
         if total_length % 4 != 0:
             return False
@@ -21,5 +21,5 @@ class Solution:
                     
                     square_lengths[key] -= matchsticks[i]
             return False
+
         return backtracking(0)
-        
