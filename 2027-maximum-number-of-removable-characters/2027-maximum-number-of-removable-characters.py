@@ -1,9 +1,7 @@
-from typing import List
-
 class Solution:
     def maximumRemovals(self, s: str, p: str, removable: List[int]) -> int:
         def is_subsequence(long_string, subsequence, removed):
-            i, j = 0, 0
+            j = 0
 
             for i in range(len(long_string)):
                 if i not in removed and long_string[i] == subsequence[j]:
