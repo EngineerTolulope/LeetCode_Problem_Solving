@@ -31,7 +31,8 @@
 
 
 class Solution:
-    def is_subsequence(self, long_string, subsequence, removed):
+    def maximumRemovals(self, s: str, p: str, removable: List[int]) -> int:
+        def is_subsequence(long_string, subsequence, removed):
             j = 0
 
             for i in range(len(long_string)):
@@ -41,7 +42,6 @@ class Solution:
                         break
             return j == len(subsequence)
 
-    def maximumRemovals(self, s: str, p: str, removable: List[int]) -> int:
         result = 0
         left, right = 0, len(removable) - 1
 
@@ -49,7 +49,7 @@ class Solution:
             middle = (left + right) // 2
             removed = set(removable[:middle + 1])
 
-            if self.is_subsequence(s, p, removed):
+            if is_subsequence(s, p, removed):
                 result = middle + 1
                 left = middle + 1
             else:
