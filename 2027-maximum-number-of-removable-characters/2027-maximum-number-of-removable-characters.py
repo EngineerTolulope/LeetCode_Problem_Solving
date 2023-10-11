@@ -1,13 +1,13 @@
 class Solution:
     def maximumRemovals(self, s, p, removable):
         left = 0
-        right = len(removable)
+        right = len(removable) - 1
         result = 0
 
         while left <= right:
-            mid = (right + left) // 2
-            if self.isSubsequence(s, p, removable, mid):
-                result = mid
+            mid = (left + right) // 2
+            if self.isSubsequence(s, p, removable, mid + 1):
+                result = mid + 1
                 left = mid + 1
             else:
                 right = mid - 1
