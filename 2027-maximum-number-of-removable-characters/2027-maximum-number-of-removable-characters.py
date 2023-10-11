@@ -5,7 +5,7 @@ class Solution:
         result = 0
 
         while left <= right:
-            mid = left + (right - left) // 2
+            mid = (right + left) // 2
             if self.isSubsequence(s, p, removable, mid):
                 result = mid
                 left = mid + 1
