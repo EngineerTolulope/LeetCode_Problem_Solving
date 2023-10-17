@@ -6,6 +6,28 @@
 #         self.right = right
 class Solution:
     def generateTrees(self, n: int) -> List[Optional[TreeNode]]:
+        def generate(left, right):
+            if left > right:
+                return [None]
+
+            result = []
+            for value in range(left, right + 1):
+                left_trees = generate(left, value - 1)
+                right_trees = generate(value + 1, right)
+
+                for left_tree in left_trees:
+                    for right_tree in right_trees:
+                        root = TreeNode(value, left_tree, right_tree)
+                        result.append(root)
+
+            return result
+
+        if n == 0:
+            return []
+        
+        return generate(1, n)
+    
+    def generateTrees_(self, n: int) -> List[Optional[TreeNode]]:
         cache = {}
         def generate(left, right):
             if left > right:
