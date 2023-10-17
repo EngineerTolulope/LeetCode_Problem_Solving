@@ -1,9 +1,9 @@
 class Solution:
     def countOrders(self, n: int) -> int:
-        MOD = int(1e9) + 7
+        remaining_slots = 2 * n
         result = 1
-
-        for i in range(1, n + 1):
-            result = (result * (i * 2 - 1) * i) % MOD
-
-        return result
+        while remaining_slots > 0:
+            valid_choices = (remaining_slots * (remaining_slots - 1)) // 2
+            result *= valid_choices
+            remaining_slots -= 2
+        return result % (10**9 + 7)
