@@ -1,3 +1,4 @@
+
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
@@ -6,42 +7,33 @@
 #         self.right = right
 class Solution:
     def generateTrees(self, n: int) -> List[Optional[TreeNode]]:
-        def generate(left, right):
-            if left > right:
-                return [None]
-
-            result = []
-            for value in range(left, right + 1):
-                left_trees = generate(left, value - 1)
-                right_trees = generate(value + 1, right)
-
-                for left_tree in left_trees:
-                    for right_tree in right_trees:
-                        root = TreeNode(value, left_tree, right_tree)
-                        result.append(root)
-
-            return result
-
-        if n == 0:
-            return []
+        cache = {}  # Dictionary to store previously computed results
         
-        return generate(1, n)
-    
-    def generateTrees_(self, n: int) -> List[Optional[TreeNode]]:
-        cache = {}
         def generate(left, right):
+            # Base case: If the left index is greater than the right index, return a list containing None
             if left > right:
                 return [None]
+            
+            # Check if the current range of indices has already been computed
             if (left, right) in cache:
                 return cache[(left, right)]
             
-            result = []
+            result = []  # List to store the generated trees
+            
+            # Generate trees for each value in the current range
             for value in range(left, right + 1):
+                # Generate all possible left subtrees
                 for left_tree in generate(left, value - 1):
+                    # Generate all possible right subtrees
                     for right_tree in generate(value + 1, right):
+                        # Create a new tree with the current value as the root and the left and right subtrees
                         root = TreeNode(value, left_tree, right_tree)
                         result.append(root)
-            cache[(left, right)] = result
-            return result
-        return generate(1, n)
             
+            # Store the generated trees in the cache for future use
+            cache[(left, right)] = result
+            
+            return result
+        
+        # Call the generate function to generate the trees for the range [1, n]
+        return generate(1, n)
