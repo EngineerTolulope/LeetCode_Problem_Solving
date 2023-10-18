@@ -12,16 +12,16 @@ class Solution:
                 return 1
 
             visited.add((row, column))
-            result = 1
+            return_result = 1
             for dr, dc in directions:
-                result &= dfs(row + dr, column + dc)
+                return_result &= dfs(row + dr, column + dc)
 
-            return result
+            return return_result
 
-        result = 0
+        final_result = 0
         for row in range(ROWS):
             for column in range(COLUMNS):
                 if grid[row][column] == 0 and (row, column) not in visited:
-                    result += dfs(row, column)
+                    final_result += dfs(row, column)
 
-        return result
+        return final_result
