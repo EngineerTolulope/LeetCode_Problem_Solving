@@ -5,7 +5,7 @@ class Solution:
         visited = set()
 
         def dfs(row, column):
-            if (row not in range(ROWS)) or (column not in range(COLUMNS)):
+            if not (0 <= row < ROWS and 0 <= column < COLUMNS):
                 return 0
 
             if grid[row][column] == 1 or (row, column) in visited:
