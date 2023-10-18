@@ -12,12 +12,9 @@ class Solution:
                 return 1
 
             visited.add((row, column))
-
             result = 1
             for dr, dc in directions:
-                new_row, new_column = row + dr, column + dc
-                if (new_row, new_column) not in visited:
-                    result &= dfs(new_row, new_column)
+                result &= dfs(row + dr, column + dc)
 
             return result
 
