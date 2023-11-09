@@ -17,4 +17,3 @@ class Solution:
             result.append(len(potions) - minimum_index)
         
         return result
-        
