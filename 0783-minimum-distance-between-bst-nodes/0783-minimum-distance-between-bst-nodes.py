@@ -17,8 +17,8 @@ class Solution:
             if previous_node:
                 difference = current_node.val - previous_node.val
                 result = min(result, difference)
-                # if result == 1:
-                #     return result
+                if result == 1:
+                    return result
             previous_node = current_node
             dfs(current_node.right)
         
