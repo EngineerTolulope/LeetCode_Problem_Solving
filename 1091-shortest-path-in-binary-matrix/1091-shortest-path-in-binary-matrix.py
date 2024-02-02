@@ -8,7 +8,7 @@ class Solution:
 
         while queue:
             row, column, length = queue.popleft()
-            if (min(row, column) < 0 or max(row, column) == grid_length or
+            if (min(row, column) < 0 or max(row, column) >= grid_length or
                 grid[row][column] == 1):
                 continue
 
