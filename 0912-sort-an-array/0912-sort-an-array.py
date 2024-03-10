@@ -1,6 +1,6 @@
 class Solution:
     def sortArray(self, nums: List[int]) -> List[int]:
-        if len(nums) == 1:
+        if len(nums) <= 1:
             return nums
         
         middle = len(nums) // 2
@@ -10,7 +10,7 @@ class Solution:
 
     def mergeArray(self, left, right):
         merged = []
-        i, j = 0, 0
+        i = j = 0
 
         while i < len(left) and j < len(right):
             if left[i] <= right[j]:
