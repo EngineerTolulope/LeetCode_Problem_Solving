@@ -1,6 +1,6 @@
 class Solution:
     def minOperations(self, nums: List[int]) -> int:
-        result, length = len(nums), len(nums)
+        result = length = len(nums)
         nums = sorted(set(nums))
         right = 0
         for left in range(len(nums)):
