@@ -12,7 +12,7 @@ class UndergroundSystem:
 
     def checkOut(self, customer_id: int, end_station: str, end_time: int) -> None:
         # Retrieve and remove the check-in information for the customer
-        start_station, start_time = self.check_in_map.pop(customer_id, (None, None))
+        start_station, start_time = self.check_in_map.get(customer_id, (None, None))
         
         if start_station is None:
             raise ValueError(f"Customer {customer_id} did not check in.")
