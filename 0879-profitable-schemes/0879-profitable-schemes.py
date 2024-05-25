@@ -1,19 +1,26 @@
 class Solution:
     def profitableSchemes(self, n: int, minProfit: int, group: List[int], profit: List[int]) -> int:
-        MOD = 10**9 + 7
+        MOD = 10**9 + 7  # Define the modulo constant
 
-        # dp[k][j] means the number of ways to achieve at least j profit with k members
+        # Initialize the dp array
+        # dp[k][j] represents the number of ways to achieve at least j profit with k members
         dp = [[0] * (minProfit + 1) for _ in range(n + 1)]
-        dp[0][0] = 1  # One way to achieve zero profit with zero members
+        dp[0][0] = 1  # Base case: one way to achieve 0 profit with 0 members
 
+        # Iterate over each crime
         for g, p in zip(group, profit):
+            # Traverse the dp array backwards to avoid overwriting values from the same iteration
             for members in range(n, g - 1, -1):
                 for currentProfit in range(minProfit, -1, -1):
+                    # Calculate the new profit, ensuring it doesn't exceed minProfit
                     newProfit = min(minProfit, currentProfit + p)
+                    # Update the dp array with the number of ways to include this crime
                     dp[members][newProfit] += dp[members - g][currentProfit]
-                    dp[members][newProfit] %= MOD
+                    dp[members][newProfit] %= MOD  # Apply modulo to keep values manageable
 
-        return sum(dp[members][minProfit] for members in range(n + 1)) % MOD
+        # Sum up all the ways to achieve at least minProfit with any number of members
+        result = sum(dp[members][minProfit] for members in range(n + 1)) % MOD
+        return result
     
     
     def profitableSchemes_(self, n: int, minProfit: int, group: List[int], profit: List[int]) -> int:
