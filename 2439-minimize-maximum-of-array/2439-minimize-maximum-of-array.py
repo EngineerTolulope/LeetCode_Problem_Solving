@@ -1,8 +1,12 @@
+from typing import List
+
 class Solution:
     def minimizeArrayValue(self, nums: List[int]) -> int:
-        total = result = nums[0]
+        total = 0
+        result = 0
 
-        for i in range(1, len(nums)):
+        for i in range(len(nums)):
             total += nums[i]
-            result = max(result, math.ceil(total / (i + 1)))
+            result = max(result, (total + i) // (i + 1))
+        
         return result
