@@ -1,7 +1,10 @@
 class Solution:
     def destCity(self, paths: List[List[str]]) -> str:
-        outgoing_set = {outgoing for outgoing, _ in paths}
+        # Create a set of all starting cities
+        starting_cities = {start for start, _ in paths}
 
-        for outgoing, incoming in paths:
-            if not incoming in outgoing_set:
-                return incoming
+        # Iterate through each path
+        for _, end in paths:
+            # If the destination city is not a starting city, it's the destination city
+            if end not in starting_cities:
+                return end
