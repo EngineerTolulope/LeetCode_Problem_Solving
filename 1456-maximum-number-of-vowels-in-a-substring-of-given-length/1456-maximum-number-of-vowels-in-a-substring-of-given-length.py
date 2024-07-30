@@ -13,8 +13,8 @@ class Solution:
             if s[right] in vowels:
                 count += 1
 
-            # Check if the window size exceeds k and adjust the left pointer
-            if (right - left + 1) > k:
+            # Shrink the window if its size exceeds k
+            while (right - left + 1) > k:
                 if s[left] in vowels:
                     count -= 1
                 left += 1
