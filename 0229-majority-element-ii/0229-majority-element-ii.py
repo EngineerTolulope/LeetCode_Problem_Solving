@@ -9,7 +9,7 @@ class Solution:
                 continue
             
             new_count = defaultdict(int)
-            for num, count in count.item():
+            for num, count in count.items():
                 if count >= 2:
                     new_count[num] = count - 1
             count = new_count
