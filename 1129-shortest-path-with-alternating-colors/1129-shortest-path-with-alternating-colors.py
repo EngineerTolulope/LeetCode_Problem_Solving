@@ -16,7 +16,7 @@ class Solution:
         # Initialize the answer list with -1, indicating unreachable nodes
         distances = [-1] * n
         # Initialize the queue with the start node (node 0) and both color options (None for the first move)
-        queue: Deque[Tuple[int, int, Optional[str]]] = deque([(0, 0, None)])  # (node, distance, last_edge_color)
+        queue = deque([(0, 0, None)])  # (node, distance, last_edge_color)
         # Set to track visited nodes with specific incoming edge colors
         visited = set()
         visited.add((0, None))
