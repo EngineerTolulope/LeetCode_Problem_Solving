@@ -2,7 +2,7 @@ from typing import List, Tuple, Deque, Optional
 from collections import defaultdict, deque
 
 class Solution:
-    def shortestAlternatingPaths(self, n: int, redEdges: List[Tuple[int, int]], blueEdges: List[Tuple[int, int]]) -> List[int]:
+    def shortestAlternatingPaths(self, n: int, redEdges: List[List[int]], blueEdges: List[List[int]]) -> List[int]:
         # Build adjacency lists for red and blue edges
         red_graph = defaultdict(list)
         blue_graph = defaultdict(list)
