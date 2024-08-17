@@ -5,7 +5,7 @@
  * @return {number[]} - A new array with the results of applying `fn` to each element.
  */
 var map = function (arr, fn) {
-    const result = new Array(arr.length);
+    const result = new Array();
 
     for (let i = 0; i < arr.length; i++) {
         result[i] = fn(arr[i], i);
