@@ -2,17 +2,17 @@ from typing import List
 
 class Solution:
     def getRow(self, rowIndex: int) -> List[int]:
-        # Initialize the first row of Pascal's Triangle
+        # Start with the first row of Pascal's Triangle
         current_row = [1]
 
-        # Generate each row up to the rowIndex
-        for row_num in range(1, rowIndex + 1):
-            # Start each new row with 1
-            next_row = [1] * (row_num + 1)
+        # Build each row of Pascal's Triangle up to the specified rowIndex
+        for row_number in range(1, rowIndex + 1):
+            # Initialize the next row with 1's at both ends
+            next_row = [1] * (row_number + 1)
 
-            # Update the internal values of the row based on the previous row
-            for j in range(1, row_num):
-                next_row[j] = current_row[j - 1] + current_row[j]
+            # Calculate the values in between the first and last elements
+            for i in range(1, row_number):
+                next_row[i] = current_row[i - 1] + current_row[i]
 
             # Move to the next row
             current_row = next_row
