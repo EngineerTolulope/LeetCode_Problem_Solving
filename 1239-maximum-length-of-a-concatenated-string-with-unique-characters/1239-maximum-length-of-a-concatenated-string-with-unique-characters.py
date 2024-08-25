@@ -1,22 +1,39 @@
+from typing import List
+from collections import Counter
+
 class Solution:
     def maxLength(self, arr: List[str]) -> int:
-        charSet = set()
+        # Set to store unique characters from the current combination
+        unique_chars = set()
 
-        def containsDuplicate(charSet, s):
-            c = Counter(charSet) + Counter(s)
-            return max(c.values()) > 1
+        def hasDuplicates(existing_chars: set, new_string: str) -> bool:
+            """
+            Check if adding characters from new_string to existing_chars results in duplicates.
+            """
+            combined_counter = Counter(existing_chars) + Counter(new_string)
+            return any(count > 1 for count in combined_counter.values())
 
-        def backtrack(i):
-            if i == len(arr):
-                return len(charSet)
+        def backtrack(index: int) -> int:
+            """
+            Use backtracking to explore all possible combinations.
+            """
+            # Base case: if we've considered all strings in arr
+            if index == len(arr):
+                return len(unique_chars)
 
-            result = 0
-            if not containsDuplicate(charSet, arr[i]):
-                for c in arr[i]:
-                    charSet.add(c)
-                result = backtrack(i + 1)
-                for c in arr[i]:
-                    charSet.remove(c)
-            return max(result, backtrack(i + 1))
+            # Option 1: Exclude the current string and proceed
+            max_length = backtrack(index + 1)
 
+            # Option 2: Include the current string if it doesn't introduce duplicates
+            if not hasDuplicates(unique_chars, arr[index]):
+                # Add current string's characters to the unique set
+                unique_chars.update(arr[index])
+                # Recursively calculate the max length by including this string
+                max_length = max(max_length, backtrack(index + 1))
+                # Backtrack: remove current string's characters after processing
+                unique_chars.difference_update(arr[index])
+
+            return max_length
+
+        # Start backtracking from the first index
         return backtrack(0)
