@@ -7,7 +7,7 @@ class ListNode:
 class MyHashMap:
 
     def __init__(self):
-        self.size = 10 ** 4  # Use 'size' instead of 'length' for clarity
+        self.size = 10   # Use 'size' instead of 'length' for clarity
         self.map = [ListNode() for _ in range(self.size)]
 
     def put(self, key: int, value: int) -> None:
