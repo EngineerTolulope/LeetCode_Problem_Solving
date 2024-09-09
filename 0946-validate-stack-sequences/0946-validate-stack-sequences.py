@@ -6,7 +6,7 @@ class Solution:
         for num in pushed:
             stack.append(num)
 
-            while stack and stack[-1] == popped[index]:
+            while index < len(popped) and stack and stack[-1] == popped[index]:
                 stack.pop()
                 index += 1
         return len(stack) == 0
