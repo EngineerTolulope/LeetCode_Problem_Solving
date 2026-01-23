@@ -7,8 +7,8 @@ class Solution:
             buckets[count].append(num)
         
         result = []
-        for count in range(len(buckets) - 1, 0, -1):
-            for num in buckets[count]:
+        for bucket in buckets[::-1]:
+            for num in bucket:
                 result.append(num)
                 if len(result) == k:
                     return result
