@@ -9,6 +9,7 @@ Welcome to my LeetCode repository, showcasing my extensive expertise in solving 
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0003-longest-substring-without-repeating-characters](https://github.com/EngineerTolulope/LeetCode_Problem_Solving/tree/main/0003-longest-substring-without-repeating-characters/) | Medium |
+| [0347-top-k-frequent-elements](https://github.com/EngineerTolulope/LeetCode_Problem_Solving/tree/main/0347-top-k-frequent-elements/) | Medium |
 ## String
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -20,6 +21,7 @@ Welcome to my LeetCode repository, showcasing my extensive expertise in solving 
 ## Array
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0347-top-k-frequent-elements](https://github.com/EngineerTolulope/LeetCode_Problem_Solving/tree/main/0347-top-k-frequent-elements/) | Medium |
 | [1091-shortest-path-in-binary-matrix](https://github.com/EngineerTolulope/LeetCode_Problem_Solving/tree/main/1091-shortest-path-in-binary-matrix/) | Medium |
 ## Breadth-First Search
 | Problem Name | Difficulty |
@@ -29,4 +31,28 @@ Welcome to my LeetCode repository, showcasing my extensive expertise in solving 
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1091-shortest-path-in-binary-matrix](https://github.com/EngineerTolulope/LeetCode_Problem_Solving/tree/main/1091-shortest-path-in-binary-matrix/) | Medium |
+## Divide and Conquer
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0347-top-k-frequent-elements](https://github.com/EngineerTolulope/LeetCode_Problem_Solving/tree/main/0347-top-k-frequent-elements/) | Medium |
+## Sorting
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0347-top-k-frequent-elements](https://github.com/EngineerTolulope/LeetCode_Problem_Solving/tree/main/0347-top-k-frequent-elements/) | Medium |
+## Heap (Priority Queue)
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0347-top-k-frequent-elements](https://github.com/EngineerTolulope/LeetCode_Problem_Solving/tree/main/0347-top-k-frequent-elements/) | Medium |
+## Bucket Sort
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0347-top-k-frequent-elements](https://github.com/EngineerTolulope/LeetCode_Problem_Solving/tree/main/0347-top-k-frequent-elements/) | Medium |
+## Counting
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0347-top-k-frequent-elements](https://github.com/EngineerTolulope/LeetCode_Problem_Solving/tree/main/0347-top-k-frequent-elements/) | Medium |
+## Quickselect
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0347-top-k-frequent-elements](https://github.com/EngineerTolulope/LeetCode_Problem_Solving/tree/main/0347-top-k-frequent-elements/) | Medium |
 <!---LeetCode Topics End-->
