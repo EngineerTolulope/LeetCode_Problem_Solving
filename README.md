@@ -17,4 +17,16 @@ Welcome to my LeetCode repository, showcasing my extensive expertise in solving 
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0003-longest-substring-without-repeating-characters](https://github.com/EngineerTolulope/LeetCode_Problem_Solving/tree/main/0003-longest-substring-without-repeating-characters/) | Medium |
+## Array
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1091-shortest-path-in-binary-matrix](https://github.com/EngineerTolulope/LeetCode_Problem_Solving/tree/main/1091-shortest-path-in-binary-matrix/) | Medium |
+## Breadth-First Search
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1091-shortest-path-in-binary-matrix](https://github.com/EngineerTolulope/LeetCode_Problem_Solving/tree/main/1091-shortest-path-in-binary-matrix/) | Medium |
+## Matrix
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1091-shortest-path-in-binary-matrix](https://github.com/EngineerTolulope/LeetCode_Problem_Solving/tree/main/1091-shortest-path-in-binary-matrix/) | Medium |
 <!---LeetCode Topics End-->
